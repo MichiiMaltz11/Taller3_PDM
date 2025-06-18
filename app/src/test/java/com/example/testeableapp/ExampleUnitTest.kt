@@ -20,8 +20,7 @@ class TipCalculatorTest {
         val tip = calculateTip(amount, tipPercent, roundUp)
         return if (personas > 0) (amount + tip) / personas else 0.0
     }
-
-
+    
      //Test 1: Calculo con 20% de propina sin redondeo
     @Test
     fun testCalculo20PorcientoSinRedondeo() {
