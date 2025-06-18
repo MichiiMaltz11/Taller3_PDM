@@ -23,6 +23,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import kotlin.math.ceil
 
 @Composable
 fun TipCalculatorScreen() {
@@ -107,7 +108,7 @@ fun TipCalculatorScreen() {
 fun calculateTip(amount: Double, tipPercent: Int, roundUp: Boolean): Double {
     var tip = amount * tipPercent / 100
     if (roundUp) {
-        tip = kotlin.math.ceil(tip)
+        tip = ceil(tip)
     }
     return tip
 }
