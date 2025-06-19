@@ -83,4 +83,32 @@ class TipCalculatorTest {
         // 90 + 9 = 99 → 99 / 3 = 33
         assertEquals(33.0, resultado, 0.01)
     }
+
+
+
+    // Test adicional 1: Propina de 0%, sin redondeo
+    @Test
+    fun testPropinaCeroPorciento() {
+        val monto = 100.0
+        val porcentaje = 0
+        val redondear = false
+
+        val resultado = calculateTip(monto, porcentaje, redondear)
+
+        assertEquals(0.0, resultado, 0.01)
+    }
+
+    // Test adicional 2: Redondeo aplicado correctamente (verifica uso de ceil)
+    @Test
+    fun testRedondeoAplicadoCorrectamente() {
+        val monto = 84.5
+        val porcentaje = 12
+        val redondear = true
+
+        val resultado = calculateTip(monto, porcentaje, redondear)
+
+        // 84.5 * 0.12 = 10.14 → redondeado a 11.0
+        assertEquals(11.0, resultado, 0.01)
+    }
+
 }
